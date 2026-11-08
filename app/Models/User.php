@@ -14,12 +14,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role_id', // 🔽 agregar
+        'role_id',
+        'pregunta_seguridad',
+        'respuesta_seguridad',
     ];
 
     protected $hidden = [
         'password',
         'remember_token',
+        'respuesta_seguridad', // 🔽 Ocultarlo por seguridad (opcional)
     ];
 
     protected function casts(): array

@@ -44,11 +44,11 @@ class SolicitudController extends Controller
     }
 
     public function show(Solicitud $solicitud)
-    {
-        $solicitud->load(['user', 'categoria', 'asignaciones.equipo']);
-        return view('solicitudes.show', compact('solicitud'));
-    }
-
+{
+    // 🔽 Carga las relaciones necesarias
+    $solicitud->load(['user', 'categoria', 'asignaciones.equipo']);
+    return view('solicitudes.show', compact('solicitud'));
+}
     public function edit(Solicitud $solicitud)
     {
         $categorias = Categoria::all();
